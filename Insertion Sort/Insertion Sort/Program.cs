@@ -12,17 +12,17 @@ namespace Insertion_Sort
         static void Main(string[] args)
         {
             //Creates an array of random numbers.
-            int[] nums = new int[10000];
+            int[] nums = new int[100000];
             Random rand = new Random();
             for (int i = 0; i < nums.Length; i++)
             {
-                nums[i] = rand.Next(10000);
+                nums[i] = rand.Next(100000);
             }
 
-            int[] nums2 = new int[10000];
+            int[] nums2 = new int[100000];
             for (int i = 0; i < nums.Length; i++)
             {
-                nums2[i] = rand.Next(10000);
+                nums2[i] = rand.Next(100000);
             }
 
             Console.WriteLine("\nRandom Numbers:");
@@ -30,7 +30,7 @@ namespace Insertion_Sort
             foreach (int x in nums)
                 Console.Write(x + " ");
 
-            Console.WriteLine("\n\nSorted Numbers:"); 
+            Console.WriteLine("\n\nBubble Sort - Sorted Numbers:"); 
             Stopwatch stopwatch1 = new Stopwatch();
             stopwatch1.Start();
 
@@ -38,16 +38,15 @@ namespace Insertion_Sort
             stopwatch1.Stop();
             BubbleSortDisplay(nums);
            
-            Console.WriteLine($"\n\nProcessing time for Bubble Sort: {stopwatch1.ElapsedMilliseconds} milliseconds\n");
-
-            Console.WriteLine("\n\nSorted Numbers:");
+            Console.WriteLine("\n\nInsertion Sort - Sorted Numbers:");
             Stopwatch stopwatch2 = new Stopwatch();
             stopwatch2.Start();
 
             InsertionSort(nums2);
             stopwatch2.Stop();
             InsertionSortDisplay(nums2);
-           
+
+            Console.WriteLine($"\n\nProcessing time for Bubble Sort: {stopwatch1.ElapsedMilliseconds} milliseconds");
             Console.WriteLine($"\n\nProcessing time for Insertion Sort: {stopwatch2.ElapsedMilliseconds} milliseconds\n");
         }
         /*Basic bubble sort algorithm*/
